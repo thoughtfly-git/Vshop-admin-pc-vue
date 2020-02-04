@@ -1,24 +1,4 @@
-# vue_shop
+# Vshop-admin-pc-vue
 
-## Project setup
-```
-npm install
-```
+使用vue创建pc店铺后台管理页面，该项目是独立页面需要与后台管理接口配合，接口见开源后台项目
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -13,14 +13,16 @@
         <el-menu
           background-color="#302f2d"
           text-color="#fff"
-          active-text-color="#ffd04b" unique-opened  :collapse = 'istogger_collapse' :collapse-transition = 'false'>
+          active-text-color="#ffd04b" unique-opened  :collapse = 'istogger_collapse' :collapse-transition = 'false' router
+          :default-active="$route.path"
+        >
           <el-submenu :index="menu.id+''" v-for="menu in menulist" :key="menu.id">
             <template slot="title">
               <i :class="iconObjects[menu.path]"></i>
               <span>{{menu.authName}}</span>
             </template>
             <div style="padding-left: 30px">
-              <el-menu-item :index="submenu.id+''" v-for="submenu in menu.children" :key="submenu.id">
+              <el-menu-item :index="'/'+submenu.path" v-for="submenu in menu.children" :key="submenu.id">
                 <template slot="title">
                   <i class="el-icon-menu"></i>
                   <span>{{submenu.authName}}</span>
@@ -31,7 +33,9 @@
 
         </el-menu>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
